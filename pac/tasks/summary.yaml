@@ -27,6 +27,12 @@ spec:
   steps:
     - name: appstudio-summary
       image: quay.io/redhat-appstudio/rhtap-task-runner:latest
+      computeResources:
+        requests:
+          memory: 64Mi
+          cpu: 50m
+        limits:
+          memory: 64Mi
       # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
       # the cluster will set imagePullPolicy to IfNotPresent
       env:
